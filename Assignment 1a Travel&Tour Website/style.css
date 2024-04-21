@@ -1,0 +1,334 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+/* Navbar Start */
+#navbar
+{
+    background: #f9f9f9;
+}
+#logo
+{ 
+    margin-top: 10px;
+    /* font-size: 35px;
+    font-weight: 700;
+    color: black;
+    text-shadow: 0px 1px 1px rgb(53, 48, 48);
+    margin-bottom: 5px; */
+
+}
+
+#logo span
+{
+    color: rgb(0, 85, 85);
+}
+
+.navbar-toggler span{
+    color: rgb(0, 85, 85); 
+}
+
+.navbar-nav
+{
+    
+    margin-left: 5px;
+
+}
+.nav-item .nav-link
+{ 
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 2px;
+}
+.nav-item .nav-link:hover{
+    background-color: rgb(0, 85, 85);
+    color: rgb(170, 255, 255);
+}
+#navbar form button{
+    background-color: rgb(0, 56, 56);
+    border: none;
+}
+/* Navbar End */
+
+/* Home Section Start */
+.home{
+    width: 100%;
+    height: 90vh;
+    background-image: url("images/bg-image4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+    background-size: 130% 120%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home:hover {
+    animation: gradient-animation 10s 1 normal ease;
+}
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+}
+.content{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    color: white;
+    text-align: center;
+}
+.home .content h5{
+    font-size: 36px;
+    font-weight: 500;
+    text-shadow: 0px 2px 2px rgb(53, 48, 48);
+}
+.home .content h1{
+    font-size: 70px;
+    font-weight: 580;
+    text-shadow: 0px 2px 2px rgb(53, 48, 48);
+}
+.home .content p{
+    font-size: 15px;
+    font-weight: 600;
+    text-shadow: 0px 1px 1px rgb(53, 48, 48);
+
+}
+.changecontent::after{
+    content: ' ';
+    color: rgb(170, 255, 255);
+    text-shadow: 0px 1px 1px rgb(53, 48, 48);
+    animation: changetext 10s infinite linear;
+}
+@keyframes changetext {
+    0%{content: 'India';}
+    10%{content: 'France';}
+    20%{content: 'Spain';}
+    30%{content: 'United States';}
+    40%{content: 'Italy';}
+    50%{content: 'Turkey';}
+    60%{content: 'Germany';}
+    70%{content: 'Japan';}
+    80%{content: 'Sri Lanka';}
+    90%{content: 'Maldives';}
+    100%{content: 'Canada';}
+}
+#bookbtn
+{
+    letter-spacing: 2px;
+    padding: 10px;
+    margin-top: 2rem;
+}
+@media (max-width:850px) {
+    .home{
+        background-position: 50%;
+    }
+}
+@media (min-height:600) {
+    .content{
+        padding-top: 50%;
+    }
+}
+@media (max-width:450px) {
+    .home .content h5{
+        font-size: 25px;
+    }
+    .home .content h1{
+        font-size: 38px;
+    }
+    .home .content p{
+        font-size:13px;
+    }
+}
+/* Home Section End */
+/* Section Packages Start */
+.packages{
+    padding: 50px;
+}
+.packages .card{
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 2px 8px rgb(53, 48, 48);
+    margin: 20px;
+}
+.packages .card img{
+    border-radius: 10px;
+    height: 350px;
+    width: 100%;
+}
+.packages .card .card-body{
+    padding: 30px;
+    background: transparent;   
+}
+.card-body h3{
+    font-weight: 600;
+}
+.card-body p{
+    font-size:15px;
+}
+.checked{
+    color: rgb(247, 182, 62);
+}
+/* Section Packages End */
+
+/* Book Section Start */
+.book{
+    background: #f9f9f9;
+    padding: 50px;
+}
+.main-text h1{
+    text-align: center;
+    text-shadow: 0px 1px 1px black;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.main-text h1 span{
+    color:rgb(0, 85, 85);
+}
+.book .card{
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px -6px black;
+    height: 100%;
+}
+.book .card img{
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px -6px black;
+}
+.book form input{
+    padding: 10px;
+    color: black;
+    font-size: 15px;
+    box-shadow: 0px 2px 5px -4px black;
+    border: none;
+}
+.book form textarea{
+    height: 200px;
+    padding: 10px;
+    color: black;
+    font-size: 15px;
+    box-shadow: 0px 2px 5px -4px black;
+    border: none;
+    resize: none;
+}
+.book .submit{
+    padding: 10px 40px;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+@media (max-width:765px) {
+    .book{
+        padding: 0;
+        margin: 0;
+    }
+    .main-text h1{
+        margin-bottom: 0px;
+        padding: 20px;
+    }
+}
+/* Book Section End */
+
+/* Services Section Start */
+.services
+{
+    background-color: #f9f9f9;
+    padding: 30px;
+}
+.services .card{
+    box-shadow: 0px 2px 5px -4px black;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.services .card i{
+    font-size: 80px;
+    text-align: center;
+    color:rgb(7, 111, 142);
+    margin-top: 20px;
+}
+.services .card{
+    text-align: center;
+}
+/* Services Section End */
+/* Gallery Section Start*/
+.gallery{
+    padding: 30px;
+}
+.gallery .card{
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px -4px black;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.gallery .card img{
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.gallery .card img:hover{
+    transform: scale(1.1);
+}
+/* Gallery Section End*/
+
+/* About Section Start*/
+.about{
+    background: #f9f9f9;
+    padding: 50px;
+}
+.about .card{
+    border-radius: 10px;
+}
+.about.card img{
+    border-radius: 10px;
+}
+.about h3{
+    letter-spacing: 1px;
+    font-weight: 550;
+}
+
+/* @media (max-width:765px) {
+    .about{
+        padding: 0;
+    }
+} */
+/* About Section End*/
+/* Footer Section Start*/
+#footer{
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+}
+#footer h1{
+    font-weight: 600;
+    padding-top: 30px;
+    text-align: center;
+    text-shadow: 0px 1px 1px black;
+}
+#footer h1 span{
+    color:rgb(0, 85, 85);
+}
+.social-links i{
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    background: black;
+    color: white;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.social-links i:hover{
+    background: rgb(36, 132, 132);
+}
+/* Footer Section End*/

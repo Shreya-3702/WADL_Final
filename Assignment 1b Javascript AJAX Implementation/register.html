@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="register-container">
+        <header>
+            <h2>Registeration Form</h2>
+        </header>
+        <form class="form" id="form2">
+            <div class="form-control">
+                <label for="id">ID*</label>
+                <div class="row">
+                    <input type="number" name="idval" id="id" autocomplete="off" required>
+                    <small>Error Message</small>
+                </div>
+
+            </div>
+            <div class="form-control">
+                <label for="name">Name*</label>
+                <div class="row">
+                    <input type="text" name="nameval" id="name" autocomplete="off" required>
+                    <small>Error Message</small>
+                </div>
+
+            </div>
+            <div class="form-control">
+                <label for="username">Username*</label>
+                <div class="row">
+                    <input type="text" name="username" id="username" autocomplete="off" required>
+                    <small>Error Message</small>
+                </div>
+            </div>
+            <div class="form-control">
+                <label for="password">Password*</label>
+                <div class="row">
+                    <input type="password" name="password" required id="password" autocomplete="off">
+                    <small>Error Message</small>
+                </div>
+
+            </div>
+            <div class="form-control">
+                <label for="email">Email*</label>
+                <div class="row">
+                    <input type="email" name="email" required id="email" autocomplete="off">
+                    <small>Error Message</small>
+                </div>
+
+            </div>
+            <div class="form-control">
+                <label for="date">DOB*</label>
+                <div class="row">
+                    <input type="date" name="date" id="date" required>
+                    <small>Error Message</small>
+                </div>
+
+            </div>
+            <div class="form-control">
+                <label for="gender1">Gender</label>
+                <div style="margin-left: 30px;" id="gender">
+                    <input type="radio" name="gender" id="gender1" value="Male"> Male
+                    <input type="radio" name="gender" id="gender2" value="Female"> Female
+                </div>
+            </div>
+            <div class="form-control" style=" margin-bottom :20px">
+                <label for="address">Address</label>
+                <textarea name="address" cols="22" rows="10" style="height: 100px;" autocomplete="off"
+                    id="address"></textarea>
+            </div>
+            <div class="form-control">
+                <label for="city">City</label>
+                <select name="city" id="city">
+                    <option value="#">--Select City--</option>
+                    <option value="Parner">Parner</option>
+                    <option value="Pune">Pune</option>
+                </select>
+            </div>
+            <div class="form-control">
+                <label for="pincode">Pincode*</label>
+                <div class="row">
+                    <input type="number" name="pincode" required id="pincode" autocomplete="off">
+                    <small>Error Message</small>
+                </div>
+
+            </div>
+            <div class="form-control">
+                <label for="state">State</label>
+                <select name="state" id="state">
+                    <option value="#">--Select State--</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Gujrat">Gujrat</option>
+                </select>
+            </div>
+            <div class="form-control">
+                <label for="drawing">Hobbies</label>
+                <div style=" position: absolute;left: 38%; ; display: inline-flex; gap: 4px;">
+                    <input type="checkbox" id="drawing">
+                    <p>Drawing</p>
+                    <input type="checkbox" id="dancing">
+                    <p>Dancing</p>
+                    <input type="checkbox" id="singing">
+                    <p>Singing</p>
+                </div>
+            </div>
+
+            <div class="form-control" style="margin-top: 20px;">
+                <input type="submit" value="Submit" id="submit-btn">
+                <input type="reset" value="Cancel" id="cancel-btn">
+            </div>
+        </form>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            let form2 = $('#form2');
+            let id = $('#id');
+            let name = $('#name');
+            let username = $("#username");
+            let password = $("#password");
+            let email = $("#email");
+            let dob = $("#date");
+            // let gender = $('input[name="gender"]:checked').val();
+            let address = $("#address");
+            // let city = $('#city option:selected').val();
+            let pincode = $("#pincode");
+            // let state = $('#state option:selected').val();
+            
+            // let hobbies = [];
+            // $('input[type="checkbox"]:checked').each(function () {
+            //     hobbies.push($(this).attr('id'));
+            // });
+            let submit = $("#submit-btn");
+
+            let count = 0;
+
+            form2.on('submit', function (event) {
+                event.preventDefault();
+            });
+
+            function setErrorMessage(input, errorMessage) {
+                const row = input.parent();
+                const small = row.find('small');
+                row.removeClass('success').addClass('error');
+                small.text(errorMessage);
+            }
+
+            function setSuccessMessage(input) {
+                const row = input.parent();
+                const small = row.find('small');
+                row.removeClass('error').addClass('success');
+            }
+
+            function isFormValid() {
+                return (
+                    !id.hasClass("error") &&
+                    !username.hasClass("error") &&
+                    !name.hasClass("error") &&
+                    !password.hasClass("error") &&
+                    !pincode.hasClass("error") &&
+                    !dob.hasClass("error") &&
+                    !email.hasClass("error")
+                );
+            }
+            id.on('change', () => {
+                const idVal = id.val().trim();
+                if (idVal == "") {
+                    alert("id should not be empty");
+                    setErrorMessage(id, "id should not be empty");
+                }
+                else {
+                    count++;
+                }
+            });
+            name.on('change', function () {
+                const nameVal = name.val().trim();
+                let regex = /^[a-zA-Z]+$/;
+                if (!regex.test(nameVal)) {
+                    alert("name should contain alphabets only");
+                    setErrorMessage(name, "name should contain alphabets only");
+                } else if (nameVal == "") {
+                    alert("name should not be empty");
+                    setErrorMessage(name, "name should not be empty");
+                } else {
+                    count++;
+                    setSuccessMessage(name);
+                }
+            });
+            username.on('change', function () {
+                const usernameVal = username.val().trim();
+                if (usernameVal == "") {
+                    alert("username should not be empty");
+                    setErrorMessage(username, "username should not be empty");
+                } else {
+                    count++;
+                }
+            });
+
+
+
+
+            password.on('change', () => {
+                const passwordVal = password.val().trim();
+                if (passwordVal.length < 8) {
+                    alert("Password should contain min 8 chars ");
+                    setErrorMessage(password, "Password should contain min 8 chars ");
+                }
+                else if (passwordVal == "") {
+                    alert("password should not be empty");
+                    setErrorMessage(password, "password should not be empty");
+                }
+                else {
+                    count++;
+                    setSuccessMessage(password);
+                }
+            })
+            email.on('change', () => {
+                const emailVal = email.val().trim();
+                let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailVal)) {
+                    setErrorMessage(email, "Invalid email format");
+                }
+                else if (emailVal == "") {
+                    alert("email should not be empty");
+                    setErrorMessage(email, "email should not be empty");
+                }
+                else {
+                    count++;
+                    setSuccessMessage(email);
+                }
+            })
+            pincode.on('change', () => {
+                const pincodeVal = pincode.val().trim();
+                if (pincodeVal.length != 6) {
+                    alert("Pincode should contain 6 digits");
+                    setErrorMessage(pincode, "Pincode should contain 6 digits");
+                }
+                else if (pincodeVal == "") {
+                    alert("pincode should not be empty");
+                    setErrorMessage(pincode, "pincode should not be empty");
+                }
+                else {
+                    count++;
+                    setSuccessMessage(pincode);
+                }
+
+            })
+            dob.on('change', () => {
+                const dobVal = new Date(dob.val());
+                const currentYear = new Date().getFullYear();
+                const dobYear = dobVal.getFullYear();
+                if (dobYear > currentYear - 18) {
+                    setErrorMessage(dob, "Only users 18 years or older are allowed");
+                }
+                else {
+                    count++;
+                    setSuccessMessage(dob);
+                }
+            })
+
+
+
+            submit.on('click', function () {
+                if (isFormValid()) {
+                    if (count == 7) {
+                        // alert("Registration Successful!");
+                        // window.location.href = "./index.html";
+                        let genderVal = $('input[name="gender"]:checked').val();
+                        let cityVal = $('#city option:selected').val();
+                        let stateVal = $('#state option:selected').val();
+                        let hobbies = [];
+                        $('input[type="checkbox"]:checked').each(function () {
+                            hobbies.push($(this).attr('id'));
+                        });
+                        const formData = {
+                            id: id.val(),
+                            name: name.val(),
+                            username: username.val(),
+                            password: password.val(),
+                            email: email.val(),
+                            dob: dob.val(),
+                            gender: genderVal,
+                            address: address.val(),
+                            city:cityVal,
+                            pincode: pincode.val(),
+                            state:stateVal,
+                            hobbies:hobbies.join(',')
+
+                        };
+
+                      
+                        $.ajax({
+                            type: "POST",
+                            url: "https://jsonplaceholder.typicode.com/posts",
+                            data: formData,
+                            success: function (response) {
+                                localStorage.setItem('registrationData', JSON.stringify(formData));
+                                alert("Registration Successful!");
+                                window.location.href = "./success_page.html";
+                            },
+                            error: function (error) {
+                                
+                                console.error("Registration failed", error);
+                            }
+                        });
+                    }
+
+                }
+            });
+
+
+        });
+    </script>
+
+
+</body>
+
+</html>

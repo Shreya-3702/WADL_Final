@@ -1,0 +1,189 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+.login-container header{
+    margin-bottom: 20px;
+}
+.login-container .form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid;
+    box-shadow: 2px black;
+    padding: 30px;
+}
+.login-container .form-control{
+    display: flex;
+    gap: 30px;    
+}
+.login-container .row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.login-container .form-control .row input{
+    padding: 5px;
+}
+
+#login-btn{
+    width:120px;
+    border:none;
+    transition: 0.5s ease;
+    padding: 6px 6px 5px 5px;
+    border-radius: 2px;
+    background-color: rgb(36, 113, 185);
+    color: white;
+    cursor: pointer;
+}
+#login-btn:hover{
+    background-color: rgb(109, 167, 221);
+}
+.login-container .form-control small{
+    margin-bottom: 20px;
+    visibility: hidden;    
+}
+.login-container .row.error input{
+    outline: 0;
+    border-color: red;
+}
+.login-container .row.error small{
+    visibility: visible;
+    color: red;
+}
+.login-container .row.success input{
+    outline: 0;
+    /* border-color: blue; */
+}
+.login-container .row.success small{
+    visibility: hidden;
+    color: blue;
+    
+}
+
+.register-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    
+}
+
+.register-container .form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid;
+    box-shadow: 2px black;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top: 20px; 
+    padding-bottom: 20px;
+    position: relative;
+    /* width: 420px; */
+}
+.register-container header{
+    margin-bottom: 20px;
+}
+.register-container .form-control{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.register-container .row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.register-container .form-control .row small{
+    visibility: hidden;    
+    margin-top: 40px;
+}
+.register-container .form label{
+    position:absolute;
+    left:20px;
+}
+.register-container .form input[type = text],[type= email],input[type=date],input[type = number]
+{
+    height: 25px;
+    width: 250px;
+    position: absolute;
+    margin-left: 150px; 
+
+}
+.register-container .form input[type = password]
+{
+    height: 25px;
+    width: 250px;
+    position: absolute;
+    margin-left: 150px; 
+
+}
+.register-container .form .form-control select,textarea{
+    width: 250px;
+    margin-left: 150px;
+}
+#submit-btn{
+    width:120px;
+    border:none;
+    transition: 0.5s ease;
+    padding: 10px;
+    border-radius: 2px;
+    background-color: rgb(36, 113, 185);
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#submit-btn:hover{
+    background-color: rgb(109, 167, 221);
+}
+#cancel-btn{
+    width:120px;
+    border:none;
+    transition: 0.5s ease;
+    padding: 10px;
+    border-radius: 2px;
+    background-color: rgb(36, 113, 185);
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#cancel-btn:hover{
+    background-color: rgb(109, 167, 221);
+}
+.register-container .row.error input{
+    outline: 0;
+    border-color: red;
+}
+.register-container .row.error small{
+    visibility: visible;
+    color: red;
+    margin-left: 150px;
+}
+.register-container .success input{
+    outline: 0;
+    /* border-color: blue; */
+}
+.register-container .row.success small{
+    visibility: hidden;
+    /* color: blue; */
+    
+}

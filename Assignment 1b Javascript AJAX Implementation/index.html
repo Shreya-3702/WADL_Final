@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+    <header><h2>Login Form</h2></header>
+    <form class="form" id="form">
+        <div class="form-control">
+            <label for="username">Username*</label>
+            <div class="row">
+                <input type="text" id="username" autocomplete="off" required>
+                <small>Error Message</small>
+            </div>
+            
+        </div>
+        <div class="form-control">
+            <label for="password">Password*</label>
+            <div class="row">
+                <input type="password" id="password" required>
+                <small>Error Message</small>
+            </div>
+        </div>
+        <div class="form-control">
+            <input type="submit" value="Login" id="login-btn">
+            <a href="./register.html">New User?</a>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    const form = document.getElementById("form");
+    let username = document.getElementById("username");
+    let password = document.getElementById("password");
+    form.addEventListener('submit',(event)=>{
+        event.preventDefault();
+        validateLoginForm();
+    });
+    var dummyPass = "validate";
+    const validateLoginForm = ()=> {
+        const usernameVal = username.value.trim();
+        const passwordVal = password.value.trim();
+        if(passwordVal != dummyPass)
+        {
+            setErrorMessage(password,"wrong password");
+        }
+        else
+        {
+            setSuccessMessage(password);
+            alert("Login-Successful");
+        }
+    
+    }
+    function setErrorMessage(input,error_message)
+    {
+        const row = input.parentElement;
+        const small = row.querySelector('small');
+        row.className = "row error";
+        small.innerText = error_message;
+    }
+    function setSuccessMessage(input)
+    {
+        const row = input.parentElement;
+        const small = row.querySelector('small');
+        row.className = "row success";
+        
+    }
+</script>
+</body>
+</html>
