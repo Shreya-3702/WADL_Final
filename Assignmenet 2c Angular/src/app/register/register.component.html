@@ -1,0 +1,100 @@
+<div class="register-container">
+  <h2>Register</h2>
+  <form #registerForm="ngForm" (ngSubmit)="onSubmitRegister(registerForm)" class="form" id="form2">
+    <div class="form-control">
+      <label for="id">ID*</label>
+      <div class="row">
+        <input type="number" name="idval" id="id" autocomplete="off" required ngModel #id="ngModel">
+        
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="name">Name*</label>
+      <div class="row">
+        <input type="text" name="nameval" id="name" autocomplete="off" required ngModel #name="ngModel">
+        
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="username">Username*</label>
+      <div class="row">
+        <input type="text" name="username" id="username" autocomplete="off" required ngModel #username="ngModel">
+        
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="password">Password*</label>
+      <div class="row">
+        <input type="password" name="password" id="password" autocomplete="off" required ngModel #password="ngModel">
+        
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="email">Email*</label>
+      <div class="row">
+        <input type="email" name="email" id="email" autocomplete="off" required ngModel #email="ngModel">
+        
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="date">DOB*</label>
+      <div class="row">
+        <input type="date" name="date" id="date" required ngModel #date="ngModel">
+        
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="gender1">Gender</label>
+      <div id="gender">
+        <input type="radio" name="gender" id="gender1" value="Male" ngModel required>
+        <label for="gender1">Male</label>
+        <input type="radio" name="gender" id="gender2" value="Female" ngModel required>
+        <label for="gender2">Female</label>
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="address">Address</label>
+      <textarea name="address" id="address" rows="0" required ngModel></textarea>
+    </div>
+    <div class="form-control">
+      <label for="city">City</label>
+      <div>
+      <select name="city" id="city" required ngModel>
+        <option value="#" >--Select City--</option>
+        <option value="Parner">Parner</option>
+        <option value="Pune">Pune</option>
+      </select>
+    </div>
+    </div>
+    <div class="form-control">
+      <label for="pincode">Pincode*</label>
+      <div class="row">
+        <input type="number" name="pincode" id="pincode" autocomplete="off" required ngModel>
+        
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="state">State</label>
+      <select name="state" id="state" required ngModel>
+        <option value="#">--Select State--</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Gujrat">Gujrat</option>
+      </select>
+    </div>
+    <div class="form-control">
+      <label for="drawing">Hobbies</label>
+      <div class="hobbies-container">
+        <input type="checkbox" id="drawing" name="hobbies" ngModel>
+        <label for="drawing">Drawing</label>
+        <input type="checkbox" id="dancing" name="hobbies" ngModel>
+        <label for="dancing">Dancing</label>
+        <input type="checkbox" id="singing" name="hobbies" ngModel>
+        <label for="singing">Singing</label>
+      </div>
+    </div>
+    <div class="form-control">
+      <input type="submit" value="Submit" id="submit-btn">
+      <input type="reset" value="Cancel" id="cancel-btn">
+    </div>
+  </form>
+</div>

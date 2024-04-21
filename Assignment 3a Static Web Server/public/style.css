@@ -1,0 +1,45 @@
+*{
+    margin:0;
+    padding: 0;
+    /* background-image: url('./images/bluebg.png'); */
+}
+
+.home{
+    height: 84vh;
+    
+    background-image: url('./images/bluebg.png');
+   
+    color: white;
+}
+.services{
+    height: 84vh;
+    background-image: url('./images/bluebg.png');
+    background-size: 100vw 100vh;
+}
+.about{
+    height: 87vh;
+    background-image: url('./images/aboutbg.png');
+    background-size: 100vw 100vh;
+    color: rgb(24, 22, 22);
+    
+}
+.about .container{
+    position: relative;
+    width: 40%;
+    padding-top: 5%;
+    margin-left: 30%;
+}
+.contact{
+    height: 87vh;
+    
+    background-image: url('./images/contactbg3.PNG');
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+.contact .container{
+    height: fit-content;
+    position: relative;
+    width: 40%;
+    padding-top: 5%;
+    margin-left: 30%;
+}

@@ -1,0 +1,10 @@
+<nav>
+  <ul style="display: flex; justify-content: flex-end;">
+    <li><a routerLink="/profile" routerLinkActive="active"><mat-icon class="profile-icon">person</mat-icon></a></li>
+    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+    <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+    <li><a routerLink="/register" routerLinkActive="active">Register</a></li>
+  
+  </ul>
+</nav>
+<router-outlet></router-outlet>
