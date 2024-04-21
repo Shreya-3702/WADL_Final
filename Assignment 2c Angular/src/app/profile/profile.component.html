@@ -1,0 +1,23 @@
+<div>
+  <h2>Profile</h2>
+  <div>
+    <p *ngIf="registrationData.id">ID: {{ registrationData.id }}</p>
+    <p *ngIf="registrationData.name">Name: {{ registrationData.name }}</p>
+    <p *ngIf="registrationData.username">Username: {{ registrationData.username }}</p>
+    <p *ngIf="registrationData.email">Email: {{ registrationData.email }}</p>
+    <p *ngIf="registrationData.date">Date of Birth: {{ registrationData.date | date }}</p>
+    <p *ngIf="registrationData.gender">Gender: {{ registrationData.gender }}</p>
+    <p *ngIf="registrationData.address">Address: {{ registrationData.address }}</p>
+    <p *ngIf="registrationData.city">City: {{ registrationData.city }}</p>
+    <p *ngIf="registrationData.pincode">Pincode: {{ registrationData.pincode }}</p>
+    <p *ngIf="registrationData.state">State: {{ registrationData.state }}</p>
+    <p *ngIf="registrationData.hobbies && registrationData.hobbies.length > 0">Hobbies: 
+      <span *ngFor="let hobby of registrationData.hobbies">
+        {{ hobby }}
+      </span>
+    </p>
+  </div>
+</div>
+
+<!-- 
+  <router-outlet></router-outlet> -->
